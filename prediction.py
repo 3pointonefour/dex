@@ -1,14 +1,12 @@
 from flask import request, render_template
 #import all necessary model variables from app
-from loadmodel import model, vectorizer
+#from app import model, vectorizer
 
 import numpy as np
 
 from preProcessing import clean_reviews
-from app import app #This line exists for the server routing 
 
-@app.route('/predict', methods=['POST'])
-def predict():
+def predict(model, vectorizer):
     if request.method == 'POST':
         rev = request.form['rev']
 
