@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+
+<body>
+    {% block content %}
+        <h1>{% block title %} Reviews from across the world {% endblock %}<BR></h1>
+        <hr>
+        {% for post in posts %}
+            <h2>{{ post[1] }}</h2>
+            <span class="badge badge-primary">Prediction {{ post[3] }}</span>
+            <h3>Review - {{ post[2] }}</h3>
+            <hr>
+        {% endfor %}
+    {% endblock %}
+</body>
